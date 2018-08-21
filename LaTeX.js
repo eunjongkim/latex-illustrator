@@ -27,13 +27,18 @@ if(latexcode!=null)
   // add latex header etc. to create a complete latex document
   var latexfile=new File(temppath+'\\latex2illustrator.tex');
   latexfile.open("w");
-  latexfile.writeln("\\documentclass{standalone}");
+  latexfile.writeln("\\documentclass[10pt]{article}");
   // add or remove additional latex packages here
   latexfile.writeln("\\usepackage{amsmath}");
+  //latexfile.writeln("\\usepackage{}")
   latexfile.writeln("\\usepackage{amssymb}");
   latexfile.writeln("\\usepackage{gensymb}");   // for \degree
   latexfile.writeln("\\usepackage{textcomp}");  // for \textdegree
   latexfile.writeln("\\usepackage{bm}");        // bold math
+  latexfile.writeln("\\DeclareMathSizes{10}{20}{14}{12}");
+  /* set the sizes of the fonts, in the order of Textstyle, Displaystyle,
+  Scriptstyle, Scriptscriptstyle */
+  // (see https://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics#Changing_font_size)
   latexfile.writeln("\\begin{document}");
   latexfile.writeln("\\pagestyle{empty}"); // no page number
   latexfile.writeln(latexcode);
