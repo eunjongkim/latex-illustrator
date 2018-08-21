@@ -36,8 +36,8 @@ if(latexcode!=null)
   latexfile.writeln("\\usepackage{textcomp}");  // for \textdegree
   latexfile.writeln("\\usepackage{bm}");        // bold math
   latexfile.writeln("\\DeclareMathSizes{10}{20}{14}{12}");
-  /* set the sizes of the fonts, in the order of Textstyle, Displaystyle,
-  Scriptstyle, Scriptscriptstyle */
+  /* set the sizes of the fonts, in the order of Displaystyle (fontsize of the
+  surrounding document, which is 10pt), Textstyle, Scriptstyle, Scriptscriptstyle */
   // (see https://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics#Changing_font_size)
   latexfile.writeln("\\begin{document}");
   latexfile.writeln("\\pagestyle{empty}"); // no page number
